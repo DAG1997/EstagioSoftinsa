@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getEmpName">
+        <s:complexType />
+      </s:element>
+      <s:element name="getEmpNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEmpNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dataInicio" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataFim" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogsMade">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dataInicio" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataFim" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogsMadeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLogsMadeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQualquerCoisa">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetQualquerCoisaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQualquerCoisaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getEmpNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getEmpName" />
+  </wsdl:message>
+  <wsdl:message name="getEmpNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getEmpNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDate" />
+  </wsdl:message>
+  <wsdl:message name="GetDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogsMadeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLogsMade" />
+  </wsdl:message>
+  <wsdl:message name="GetLogsMadeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogsMadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQualquerCoisaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQualquerCoisa" />
+  </wsdl:message>
+  <wsdl:message name="GetQualquerCoisaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQualquerCoisaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceDBSoap">
+    <wsdl:operation name="getEmpName">
+      <wsdl:input message="tns:getEmpNameSoapIn" />
+      <wsdl:output message="tns:getEmpNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDate">
+      <wsdl:input message="tns:GetDateSoapIn" />
+      <wsdl:output message="tns:GetDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogsMade">
+      <wsdl:input message="tns:GetLogsMadeSoapIn" />
+      <wsdl:output message="tns:GetLogsMadeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQualquerCoisa">
+      <wsdl:input message="tns:GetQualquerCoisaSoapIn" />
+      <wsdl:output message="tns:GetQualquerCoisaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceDBSoap" type="tns:ServiceDBSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getEmpName">
+      <soap:operation soapAction="http://tempuri.org/getEmpName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDate">
+      <soap:operation soapAction="http://tempuri.org/GetDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogsMade">
+      <soap:operation soapAction="http://tempuri.org/GetLogsMade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQualquerCoisa">
+      <soap:operation soapAction="http://tempuri.org/GetQualquerCoisa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceDBSoap12" type="tns:ServiceDBSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getEmpName">
+      <soap12:operation soapAction="http://tempuri.org/getEmpName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDate">
+      <soap12:operation soapAction="http://tempuri.org/GetDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogsMade">
+      <soap12:operation soapAction="http://tempuri.org/GetLogsMade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQualquerCoisa">
+      <soap12:operation soapAction="http://tempuri.org/GetQualquerCoisa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceDB">
+    <wsdl:port name="ServiceDBSoap" binding="tns:ServiceDBSoap">
+      <soap:address location="http://localhost/ServiceDB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceDBSoap12" binding="tns:ServiceDBSoap12">
+      <soap12:address location="http://localhost/ServiceDB.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
